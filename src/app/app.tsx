@@ -2,6 +2,7 @@
 import { AppRouter } from 'app/providers/router';
 // widgets
 import { Navbar } from 'widgets/navbar';
+import { Sidebar } from 'widgets/sidebar';
 // hooks
 import { useTheme } from 'app/providers/theme-provider';
 // shared
@@ -15,7 +16,10 @@ const App = () => {
     return (
         <div className={classNames('app', {}, [theme])}>
             <Navbar />
-            <AppRouter />
+            <div className="content-page">
+                <Sidebar />
+                <AppRouter />
+            </div>
         </div>
     );
 };
