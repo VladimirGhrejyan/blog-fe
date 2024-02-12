@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 // providers
 import { AppRouter } from 'app/providers/router';
 // widgets
@@ -15,11 +16,13 @@ const App = () => {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Navbar />
-            <div className="content-page">
-                <Sidebar />
-                <AppRouter />
-            </div>
+            <Suspense fallback="">
+                <Navbar />
+                <div className="content-page">
+                    <Sidebar />
+                    <AppRouter />
+                </div>
+            </Suspense>
         </div>
     );
 };
