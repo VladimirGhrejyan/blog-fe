@@ -3,7 +3,7 @@ import { Link, LinkProps } from 'react-router-dom';
 // shared
 import { classNames } from 'shared/lib/class-names/class-names';
 // styles
-import classes from './app-link.module.scss';
+import cls from './app-link.module.scss';
 
 export enum EAppLinkTheme {
     PRIMARY = 'primary',
@@ -22,10 +22,7 @@ export const AppLink: FC<IProps> = ({
     ...linkProps
 }) => {
     return (
-        <Link
-            {...linkProps}
-            className={classNames(classes.appLink, {}, [className, classes[theme]])}
-        >
+        <Link {...linkProps} className={classNames(cls.appLink, {}, [className, cls[theme]])}>
             {children}
         </Link>
     );
