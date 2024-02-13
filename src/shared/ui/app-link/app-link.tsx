@@ -22,7 +22,10 @@ export const AppLink: FC<IProps> = ({
     ...linkProps
 }) => {
     return (
-        <Link {...linkProps} className={classNames(cls.appLink, {}, [className, cls[theme]])}>
+        <Link
+            {...linkProps}
+            className={classNames(cls.appLink, {}, [className, cls[theme]])}
+        >
             {children}
         </Link>
     );
