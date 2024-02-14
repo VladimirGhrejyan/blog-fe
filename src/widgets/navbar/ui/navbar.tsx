@@ -13,11 +13,7 @@ export const Navbar: FC<IProps> = ({ className }) => {
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
             <div className={cls.links}>
-                <AppLink
-                    to={'/'}
-                    className={cls.mainLink}
-                    theme={EAppLinkTheme.SECONDARY}
-                >
+                <AppLink to={'/'} className={cls.mainLink} theme={EAppLinkTheme.SECONDARY}>
                     Main
                 </AppLink>
                 <AppLink to={'/about'} theme={EAppLinkTheme.SECONDARY}>

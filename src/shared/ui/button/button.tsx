@@ -13,17 +13,10 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: EButtonTheme;
 }
 
-export const Button: FC<IProps> = ({
-    className,
-    theme,
-    children,
-    ...buttonProps
-}) => {
+export const Button: FC<IProps> = ({ className, theme, children, ...buttonProps }) => {
     return (
         <button
-            className={classNames(cls.button, { [cls[theme]]: true }, [
-                className,
-            ])}
+            className={classNames(cls.button, { [cls[theme]]: true }, [className])}
             {...buttonProps}
         >
             {children}
