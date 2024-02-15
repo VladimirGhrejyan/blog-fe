@@ -1,4 +1,6 @@
 {
     "lang": "Русский",
-    "not_found": "Страница не найдена"
+    "not_found": "Page not found",
+    "refresh_page": "Refresh page",
+    "unexpected_error": "Unexpected Error"
 }
