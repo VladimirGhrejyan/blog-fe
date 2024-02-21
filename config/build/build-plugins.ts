@@ -5,7 +5,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { IBuildOptions } from './types/config';
 
 export const buildPlugins = (options: IBuildOptions): webpack.WebpackPluginInstance[] => {
-    return [
+    const plugins = [
         new HtmlWebpackPlugin({
             template: options.paths.html,
         }),
@@ -17,7 +17,12 @@ export const buildPlugins = (options: IBuildOptions): webpack.WebpackPluginInsta
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(options.isDev),
         }),
-        new webpack.HotModuleReplacementPlugin(),
-        new BundleAnalyzerPlugin({ openAnalyzer: false }),
     ];
+
+    if (options.isDev) {
+        plugins.push(new webpack.HotModuleReplacementPlugin());
+        plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+    }
+
+    return plugins;
 };

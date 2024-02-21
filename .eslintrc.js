@@ -36,6 +36,9 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'react/no-deprecated': 'warn',
         'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+        '@typescript-eslint/no-unused-vars': [
+            'warn',
+            { argsIgnorePattern: '^_', offsetTernaryExpressions: true },
+        ],
     },
 };

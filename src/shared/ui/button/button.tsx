@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC } from 'react';
+import React, { ButtonHTMLAttributes, FC } from 'react';
 // shared
 import { classNames } from 'shared/lib/class-names/class-names';
 // styles
@@ -6,6 +6,7 @@ import cls from './button.module.scss';
 
 export enum EButtonTheme {
     CLEAR = 'clear',
+    OUTLINE = 'outline',
 }
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
