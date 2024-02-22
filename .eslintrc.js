@@ -29,16 +29,19 @@ module.exports = {
     },
     plugins: ['@typescript-eslint', 'react', 'i18next'],
     rules: {
-        'indent': [2, 4],
+        'indent': [
+            2,
+            4,
+            {
+                offsetTernaryExpressions: true,
+            },
+        ],
         'quotes': ['error', 'single'],
         'semi': ['error', 'always'],
         'react/jsx-indent': [2, 4],
         'react/react-in-jsx-scope': 'off',
         'react/no-deprecated': 'warn',
         'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': [
-            'warn',
-            { argsIgnorePattern: '^_', offsetTernaryExpressions: true },
-        ],
+        '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     },
 };

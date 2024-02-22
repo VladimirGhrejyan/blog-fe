@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import { FC, useState } from 'react';
 // shared
 import { classNames } from 'shared/lib/class-names/class-names';
