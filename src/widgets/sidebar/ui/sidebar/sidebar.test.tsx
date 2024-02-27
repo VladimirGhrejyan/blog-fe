@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/react';
 import { Sidebar } from './sidebar';
-import { renderWithTranslation } from 'shared/lib/tests/render-with-translation/render-with-translation';
+import { componentRender } from 'shared/lib/tests/component-render/component-render';
 
 describe('sidebar', () => {
     test('sidebar in the document', () => {
-        renderWithTranslation(<Sidebar />);
+        componentRender(<Sidebar />);
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
     });
 });

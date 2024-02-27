@@ -4,6 +4,7 @@ import { FC, useState } from 'react';
 import { classNames } from 'shared/lib/class-names/class-names';
 import { ThemeSwitcher } from 'shared/ui/theme-switcher/theme-switcher';
 import { LangSwitcher } from 'shared/ui/lang-switcher/lang-switcher';
+import { Button, EButtonSize } from 'shared/ui/button/button';
 // styles
 import cls from './sidebar.module.scss';
 
@@ -23,7 +24,9 @@ export const Sidebar: FC<IProps> = ({ className }) => {
             data-testid="sidebar"
             className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
-            <button onClick={onToggle}>toggle</button>
+            <Button onClick={onToggle} className={cls.collapseButton} square size={EButtonSize.L}>
+                {collapsed ? '>' : '<'}
+            </Button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} />
